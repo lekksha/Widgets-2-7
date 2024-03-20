@@ -2,9 +2,8 @@
 
 #include <QMessageBox>
 #include <QVBoxLayout>
-Win::Win(QWidget *parent):QWidget(parent)
+Win::Win(QWidget *parent) : QWidget(parent)
 {
-    //codec = QTextCodec::codecForName("Windows-1251");
     setWindowTitle("Возведение в квадрат");
     frame = new QFrame(this);
     frame->setFrameShadow(QFrame::Raised);
@@ -58,7 +57,7 @@ void Win::begin()
 
 void Win::calc()
 {
-    bool Ok=true; float r,a;
+    bool Ok=true; float r, a;
     QString str=inputEdit->text();
     a=str.toDouble(&Ok);
     if (Ok)

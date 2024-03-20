@@ -6,7 +6,7 @@
 #include <QPushButton>
 #include <QWidget>
 #include <QtGui>
-class Win: public QWidget // класс окна
+class Win : public QWidget // класс окна
 {
     Q_OBJECT // макрос Qt, обеспечивающий корректное создание сигналов и слотов
 protected:
@@ -28,9 +28,8 @@ public slots:
 class StrValidator:public QValidator // класс компонента проверки ввода
 {
 public:
-    StrValidator(QObject *parent):QValidator(parent){}
-    virtual State validate(QString &str,int &pos)const
-    {
+    StrValidator(QObject *parent) : QValidator(parent){}
+    virtual State validate(QString &str,int &pos) const {
         return Acceptable; // метод всегда принимает вводимую строку
     }
 };
