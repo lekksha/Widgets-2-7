@@ -4,22 +4,22 @@
 #include <QVBoxLayout>
 Win::Win(QWidget *parent):QWidget(parent)
 {
-    codec = QTextCodec::codecForName("Windows-1251");
-    setWindowTitle(codec->toUnicode("Возведение в квадрат"));
+    //codec = QTextCodec::codecForName("Windows-1251");
+    setWindowTitle("Возведение в квадрат");
     frame = new QFrame(this);
     frame->setFrameShadow(QFrame::Raised);
     frame->setFrameShape(QFrame::Panel);
-    inputLabel = new QLabel(codec->toUnicode("Введите число:"),
+    inputLabel = new QLabel("Введите число:",
                             this);
     inputEdit = new QLineEdit("",this);
     StrValidator *v=new StrValidator(inputEdit);
     inputEdit->setValidator(v);
-    outputLabel = new QLabel(codec->toUnicode("Результат:"),
+    outputLabel = new QLabel("Результат:",
                              this);
     outputEdit = new QLineEdit("",this);
-    nextButton = new QPushButton(codec->toUnicode("Следующее"),
+    nextButton = new QPushButton("Следующее",
                                  this);
-    exitButton = new QPushButton(codec->toUnicode("Выход"),
+    exitButton = new QPushButton("Выход",
                                  this);
     // компоновка приложения выполняется согласно рисунку 2.
     QVBoxLayout *vLayout1 = new QVBoxLayout(frame);
@@ -77,8 +77,8 @@ void Win::calc()
         if (!str.isEmpty())
         {
             QMessageBox msgBox(QMessageBox::Information,
-                               codec->toUnicode("Возведение в квадрат."),
-                               codec->toUnicode("Введено неверное значение."),
+                               "Возведение в квадрат.",
+                               "Введено неверное значение.",
                                QMessageBox::Ok);
             msgBox.exec();
         }
