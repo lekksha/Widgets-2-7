@@ -28,7 +28,7 @@ class StrValidator : public QValidator // класс компонента про
 {
 public:
     StrValidator(QObject *parent) : QValidator(parent) {}
-    virtual State validate(QString &str,int &pos) const {
+    virtual State validate(QString &str, int &pos) const override {
         return Acceptable; // метод всегда принимает вводимую строку
     }
 };
