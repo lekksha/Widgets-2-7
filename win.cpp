@@ -39,12 +39,12 @@ Win::Win(QWidget *parent) : QWidget(parent)
     hLayout->addWidget(frame);  // добавить в компоновку
     hLayout->addLayout(vLayout2);   // добавить в компоновку
     begin();    // установить начальный интерфейс
-    connect(exitButton,SIGNAL(clicked(bool)),   // добавить логику для кнопки выхода
-            this,SLOT(close()));
-    connect(nextButton,SIGNAL(clicked(bool)),   // добавить логику для кнопки следующего числа
-            this,SLOT(begin()));
-    connect(inputEdit,SIGNAL(returnPressed()),  // добавить логику для кнопки вычисления значения
-            this,SLOT(calc()));
+    connect(exitButton, &QPushButton::clicked,   // добавить логику для кнопки выхода
+            this, &QWidget::close);
+    connect(nextButton, &QPushButton::clicked, // добавить логику для кнопки следующего числа
+            this, &Win::begin);
+    connect(inputEdit, &QLineEdit::returnPressed,  // добавить логику для кнопки вычисления значения
+            this, &Win::calc);
 }
 
 void Win::begin()   // метод начальной настройки интерфейса
